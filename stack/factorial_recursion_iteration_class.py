@@ -23,14 +23,31 @@ def factorial_rec(n):
         return n * factorial_rec(n - 1)
 
 def main():
+    text = input("input number : ")
+
+    if text == 'q' or 'quit':
+        return
     
+    n = int(text)
+
+    if n < 0:
+        print("0 이상의 정수를 입력하세요.")
+        return
+
+    elif n == 0 or 1:
+        return 1
+
+    else:
+        return n * factorial_rec(n - 1)
+
 
 if __name__ == "__main__":
-    n = int(input("\n정수를 입력하세요: ").strip())
-    print(f"반복문 기반: {factorial_iter(n)}")
-    try:
-        print(f"재귀 기반: {factorial_rec(n)}")
-    except RecursionError:
-        print("입력값이 너무 커서 재귀 계산은 불가능합니다.")
+    # n = int(input("\n정수를 입력하세요: ").strip())
+    # print(f"반복문 기반: {factorial_iter(n)}")
+    # try:
+    #     print(f"재귀 기반: {factorial_rec(n)}")
+    # except RecursionError:
+    #     print("입력값이 너무 커서 재귀 계산은 불가능합니다.")
 
-    # main()
+    x= main()
+    print(x)
